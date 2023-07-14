@@ -11,7 +11,9 @@ import { CuestionariosComponent } from './modules/components/cuestionarios/cuest
 import { ApiCuestionarioService } from './modules/services/api.cuestionario.service';
 import { ApiColegioService } from './modules/services/api.colegio.service';
 import { ApiPreguntaService } from './modules/services/api.pregunta.service';
-
+import { HttpClientModule } from '@angular/common/http';
+import { InputTextModule } from 'primeng/inputtext';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,10 @@ import { ApiPreguntaService } from './modules/services/api.pregunta.service';
     BrowserModule,
     AppRoutingModule, 
     ButtonModule,
-    TableModule
+    TableModule,
+    HttpClientModule,
+    InputTextModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ApiColegioService,

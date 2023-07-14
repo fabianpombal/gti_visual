@@ -1,1 +1,52 @@
-<p>preguntas works!</p>
+
+<div class="card">
+    <p-table #preguntasTable
+        [value]="preguntasList"
+        [paginator]="true"
+        [rows]="5"
+        [showCurrentPageReport]="true"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        currentPageReportTemplate="En {first} a {last} de {totalRecords} entradas"
+        [rowsPerPageOptions]="[10, 25, 50]"
+        [globalFilterFields]="['pregunta', 'tipo_edad', 'tipo_estructura', 'tipo_pregunta']"
+    >
+    <ng-template pTemplate="caption">
+        <div style="text-align: right">        
+            <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+            <input pInputText type="text" (input)="applyFilterGlobal($event, 'contains')" placeholder="Buscar..." />
+        </div>
+    </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Pregunta</th>
+                <th>Franja de edad</th>
+                <th>Tipo Estructura</th>
+                <th>Tipo Pregunta</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th><p-columnFilter type="text" field="tipo_edad"></p-columnFilter></th>
+                <th><p-columnFilter type="text" field="tipo_estructura"></p-columnFilter></th>
+                <th><p-columnFilter type="text" field="tipo_pregunta"></p-columnFilter></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-pregunta>
+            <tr>
+                <td>{{ pregunta.id }}</td>
+                <td>{{ pregunta.pregunta }}</td>
+                
+                <td>{{ pregunta.tipo_edad }}</td>
+                <td>{{ pregunta.tipo_estructura }}</td>
+                <td>{{ pregunta.tipo_pregunta }}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+            <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+            <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+        </ng-template>
+    </p-table>
+</div>

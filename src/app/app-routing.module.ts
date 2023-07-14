@@ -11,11 +11,11 @@ const routes: Routes = [
     path: ''
   },
   {
-    path: 'preguntas/:colegio',
+    path: 'preguntas',
     component: PreguntasComponent
   },
   {
-    path: 'cuestionarios/:id',
+    path: 'cuestionarios',
     component: CuestionariosComponent
   }
 ];
