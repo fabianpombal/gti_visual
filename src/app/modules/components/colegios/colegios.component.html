@@ -9,8 +9,8 @@
                     <th></th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-product>
-                <tr *ngFor="let cole of colegioList">
+            <ng-template pTemplate="body" let-cole>
+                <tr >
                     <td>{{ cole.hash }}</td>
                     <td>
                         <p-button label="Preguntas" (click)="goToPreguntas(cole)"></p-button>

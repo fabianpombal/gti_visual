@@ -42,3 +42,14 @@ export type tipo_pregunta = {
 export type tipo_preguntas = {
     tipoPreguntas: Array<tipo_pregunta>
 }
+
+export type pregunta_test = {
+    colegio: string,
+    id: number,
+    pregunta: number,
+    test:number
+}
+
+export type preguntas_test = {
+    preguntasTest: Array<pregunta_test>
+}

@@ -1,1 +1,17 @@
-<p>cuestionarios works!</p>
+<div class="grid">
+    <div class="col-2"></div>
+    <div class="col-8">
+       
+<p-accordion [activeIndex]="0" [multiple]="true">
+    <p-accordionTab *ngFor="let cuestionario of cuestionarioList" [header]="cuestionario.fecha_cierre">
+        <p>Colegio: {{cuestionario.colegio}}</p>
+        <p>Tipo de estructura: {{cuestionario.estructura===1 ? 'Formal': 'Informal'}}</p>
+        <p>Seguimiento: {{cuestionario.followUp === 1 ? 'Si' : 'no'}}</p>
+        <p>Año escolar: {{cuestionario.school_year}}</p>
+        <p-button label="preguntas" (onClick)="goToPreguntas(cuestionario.id)"></p-button>
+
+    </p-accordionTab>
+</p-accordion>
+    </div>
+    <div class="col-2"></div>
+</div>

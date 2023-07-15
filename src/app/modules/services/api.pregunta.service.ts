@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { preguntas, tipo_edades, tipo_estructuras, tipo_pregunta, tipo_preguntas } from '../models/pregunta.model';
+import { pregunta, preguntas, preguntas_test, tipo_edades, tipo_estructuras, tipo_pregunta, tipo_preguntas } from '../models/pregunta.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,11 +9,14 @@ export class ApiPreguntaService {
 
 
   constructor(private http: HttpClient) { }
-  private endpoint: string = "http://192.168.1.41:6001";
+  private readonly endpoint: string = "http://192.168.1.41:6001";
 
 
   get(): Observable<preguntas> {
     return this.http.get<preguntas>(`${this.endpoint}/preguntas`);
+  }
+  getById(id: number):  Observable<pregunta> {
+    return this.http.get<pregunta>(`${this.endpoint}/pregunta/${id}`)
   }
 
   getByColegio(cole: string): Observable<preguntas> {
@@ -28,6 +31,10 @@ export class ApiPreguntaService {
   }
   getTipoEstructuras(): Observable<tipo_estructuras> {
     return this.http.get<tipo_estructuras>(`${this.endpoint}/tipo_estructuras`)
+  }
+
+  getPreguntasTest(test: number): Observable<preguntas_test> {
+    return this.http.get<preguntas_test>(`${this.endpoint}/preguntasTest/${test}`)
   }
 
 

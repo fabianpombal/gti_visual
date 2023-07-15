@@ -14,12 +14,17 @@ import { ApiPreguntaService } from './modules/services/api.pregunta.service';
 import { HttpClientModule } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccordionModule } from 'primeng/accordion';
+import { PreguntasTestComponent } from './modules/components/preguntas-test/preguntas-test.component';
+import { DialogModule } from 'primeng/dialog';
+import { CardModule } from 'primeng/card';
 @NgModule({
   declarations: [
     AppComponent,
     ColegiosComponent,
     PreguntasComponent,
-    CuestionariosComponent
+    CuestionariosComponent,
+    PreguntasTestComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TableModule,
     HttpClientModule,
     InputTextModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AccordionModule,
+    DialogModule,
+    CardModule
   ],
   providers: [
     ApiColegioService,

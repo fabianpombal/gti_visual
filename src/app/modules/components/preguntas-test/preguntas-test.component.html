@@ -1,0 +1,14 @@
+<div class="grid">
+    <div class="col-4" *ngFor="let preguntaTest of preguntasTest">
+        
+        <p-card [header]="$any(preguntaTest).id">
+            <p-button (click)="showDialog()" icon="pi pi-external-link" label="Mostrar pregunta"></p-button>
+            <p-dialog header="Pregunta" [draggable]="false" [(visible)]="visible" [style]="{width: '50vw'}" (onHide)="clearPregunta()" (onShow)="getPregunta(preguntaTest.pregunta)">
+                <p>
+                    {{pregunta.pregunta}}
+                </p>
+            </p-dialog>
+        </p-card>
+       
+    </div>
+</div>
